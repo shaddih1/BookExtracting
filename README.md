@@ -7,6 +7,10 @@ Tool to extract PDFs
 
 Usage: $ python3 bookextracting.py [url] [name]
 
-
-<p align="center">
-<img src="https://imgur.com/M70gvlZ.gif"/>
+       _______
+      /      /,    
+     /      //   Book Extracting
+    /______//          
+   (______(/  V 0.1    PDF  
+ 
+   # Coded By Shady H & Guy U
