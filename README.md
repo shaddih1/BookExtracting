@@ -14,4 +14,4 @@ Tool to extract PDFs
    
 Usage: $ python3 bookextracting.py [url] [name]
 
-Made with <3 PDFs
+    Made with <3 for PDFs
