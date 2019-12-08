@@ -11,6 +11,6 @@ Usage: $ python3 bookextracting.py [url] [name]
       /      /,    
      /      //   Book Extracting
     /______//          
-   (______(/  V 0.1    PDF  
- 
-   # Coded By Shady H & Guy U
+    (______(/  V 0.1    PDF  
+    
+    # Coded By Shady H & Guy U
