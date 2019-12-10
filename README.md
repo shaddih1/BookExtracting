@@ -7,7 +7,7 @@ Tool to extract PDFs
        /      /,    
       /      //   Book Extracting
      /______//          
-    (______(/  V 0.1    PDF  
+    (______(/  V 0.1R   PDF  
      
      # Coded By Shady H & Guy U
    
