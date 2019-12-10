@@ -12,6 +12,6 @@ Tool to extract PDFs
      # Coded By Shady H & Guy U
    
    
-Usage: $ python3 bookextracting.py [url] [name]
+Usage: $ python3 extracting.py [url] [name]
 
     Made with <3 for PDFs
