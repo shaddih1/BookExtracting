@@ -7,11 +7,11 @@ Tool to extract PDFs
        /      /,    
       /      //   Book Extracting
      /______//          
-    (______(/  V 0.1    PDF  
+    (______(/  V 0.1R   PDF  
      
      # Coded By Shady H & Guy U
    
    
-Usage: $ python3 bookextracting.py [url] [name]
+Usage: $ python3 extracting.py [url] [name]
 
     Made with <3 for PDFs
