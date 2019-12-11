@@ -2,30 +2,36 @@
 # -*- coding: utf-8 -*-
 
 # library
-import requests, time, sys, os
+import requests, getopt, time, sys, os
 from time import sleep
 
+def usage():
+	print("""Usage: $ python3 extracting.py [-u] url [-f] file_name
+
+Information:
+  -h, --help            Show this help message and exit
+  -u, --url             Set URL to extract
+  -f, --file_name       Set file name
+  -e, --extension       Comming soon
+  -s, --scan            Comming soon
+
+Examples:
+  $ python3 extracting.py -u url -f name
+  $ python3 extracting.py --url url --file_name name""")
+
 def main():
-	if len(sys.argv) == 3:
-		url = sys.argv[1]
-		name = sys.argv[2]
-		file = requests.get(url)
-		banner()
-		print("Stranting...")
-		time.sleep(2)
-		open(os.getcwd() + "/{}.pdf".format(name), "wb").write(file.content)
-		print("It has been done successfully.")
-	else:
-		print("Usage: $ python3 extracting.py [url] [name]")
+		# open(os.getcwd() + "/{}.pdf".format(name), "wb").write(file.content)
+		# print("It has been done successfully.")
+		
 
 def banner():
 	os.system('clear')
 	print("""       _______
-      /      /,    
+      /      /,
      /      //   Book Extracting
-    /______//           
-   (______(/  V 0.1R   PDF  
- 
+    /______//
+   (______(/  V 0.1R   PDF
+
    # Coded By Shady H & Guy U
 """)
 
