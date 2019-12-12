@@ -28,7 +28,8 @@ Extract some books with BookExtracting
       -u URL, --url URL     Set URL to extract
       -f NAME, --file_name NAME
                             Set file name
-    example:
+ Example usage:
+ 
       $ python3 extracting.py -u http//:url... -f file_name pdf
       $ python3 extracting.py -q -u http://url... -f file_name epub
       $ python3 extracting.py
