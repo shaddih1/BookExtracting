@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # standard library
-import requests, argparse, time, sys, os
+import requests, argparse, time, sys
 from time import sleep
 
 def usage():
@@ -15,7 +15,7 @@ def usage():
 	parser.add_argument("-f", "--file_name", metavar="FILE_NAME", help="Set file name")
 	parser.add_argument("-p", "--path", metavar="PATH", help="Set the document path")
 	if len(sys.argv) < 2:
-		print("Comming Soon")
+		print("Comming Soon v0.2")
 		sys.exit()
 	return parser.parse_args()
 
