@@ -9,7 +9,7 @@ Extract EPUBs, DOCXs, PDFs
        /      /,    
       /      //   Book Extracting
      /______//          
-    (______(/  V 0.2   EPUB | DOCX
+    (______(/  V 0.1R   EPUB | DOCX
                             PDF
      
      # Coded By Shady H & Guy U
