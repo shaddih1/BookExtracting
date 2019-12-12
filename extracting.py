@@ -8,12 +8,12 @@ from time import sleep
 def usage():
 	parser = argparse.ArgumentParser()
 	parser.add_argument("extension", choices=['pdf','epub','docx'],
-	    help="Extension type")
+	    help="extension type")
 	parser.add_argument("-q", "--quiet", action="store_true",
 	    help="suppresses printer model determination")
-	parser.add_argument("-u", "--url", metavar="URL", help="Set URL to extract")
-	parser.add_argument("-p", "--path", metavar="PATH", help="Set the document path")
-	parser.add_argument("-f", "--file_name", metavar="FILE_NAME", help="Set file name")
+	parser.add_argument("-u", "--url", metavar="URL", help="set URL to extract")
+	parser.add_argument("-p", "--path", metavar="PATH", help="set the document path")
+	parser.add_argument("-f", "--file_name", metavar="FILE_NAME", help="set file name")
 	if len(sys.argv) < 2:
 		print("Comming Soon v0.2")
 		pass
