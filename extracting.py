@@ -6,13 +6,14 @@ import requests, argparse, time, sys, os
 from time import sleep
 
 def usage():
-	parser = argparse.ArgumentParser(description="Book Extracting Tool.")
+	parser = argparse.ArgumentParser()
 	parser.add_argument("extension", choices=['pdf','epub','docx'],
 	    help="Extension type")
 	parser.add_argument("-q", "--quiet", action="store_true",
-	    help="Suppress warnings and chit-chat")
+	    help="suppresses printer model determination")
 	parser.add_argument("-u", "--url", metavar="URL", help="Set URL to extract")
 	parser.add_argument("-f", "--file_name", metavar="FILE_NAME", help="Set file name")
+	parser.add_argument("-p", "--path", metavar="PATH", help="Set the document path")
 	if len(sys.argv) < 2:
 		print("Comming Soon")
 		sys.exit()
@@ -24,15 +25,18 @@ def main():
 		pass
 	else:
 		banner()
+	if args.path:
+		path = str(args.path)
+	else:
+		path = os.getcwd()
 	url = args.url
 	file_name = args.file_name
 	extension = args.extension
 	file = requests.get(url)
-	open(os.getcwd() + "/{}.{}".format(file_name, extension), "wb").write(file.content)
+	open(path + "/{}.{}".format(file_name, extension), "wb").write(file.content)
 	print("It has been done successfully.")
 
 def banner():
-	os.system('clear')
 	print("""       _______
       /      /,
      /      //   Book Extracting
