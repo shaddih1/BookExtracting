@@ -2,7 +2,7 @@
 
 ![language](https://img.shields.io/badge/language-python3%2B-green.svg)
 
-Tool to extract PDFs
+Extract EPUBs, DOCXs, PDFs
 | Written in Python3 
 
         _______
