@@ -14,7 +14,7 @@ def usage():
 	parser.add_argument("-u", "--url", metavar="URL", help="Set URL to extract")
 	parser.add_argument("-f", "--file_name", metavar="FILE_NAME", help="Set file name")
 	if len(sys.argv) < 2:
-		print("Comming Soon")
+		print("Comming Soon v0.2")
 		sys.exit()
 	return parser.parse_args()
 
