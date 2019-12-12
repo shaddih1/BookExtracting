@@ -32,4 +32,5 @@ Extract some books with BookExtracting
  
       $ python3 extracting.py -u http//:url... -f file_name pdf
       $ python3 extracting.py -q -u http://url... -f file_name epub
-      $ python3 extracting.py
+      $ python3 extracting.py -u htt//url... -p /user/name/... -f file_name pdf
+      $ python3 extracting.py 
