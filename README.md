@@ -1,9 +1,9 @@
 # BookExtracting
 
+![version](https://img.shields.io/badge/version-0.1-green.svg)
 ![language](https://img.shields.io/badge/language-python3%2B-green.svg)
 
 Extract EPUBs, DOCXs, PDFs
-| Written in Python3 
 
         _______
        /      /,    
@@ -16,4 +16,4 @@ Extract EPUBs, DOCXs, PDFs
    
 Usage:
 
-    Made with <3 for PDFs
+    $ python3 extracting.py -u http://myurl.com -f file_name pdf 
