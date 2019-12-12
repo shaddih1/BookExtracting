@@ -2,11 +2,11 @@
 # -*- coding: utf-8 -*-
 
 # standard library
-import requests, argparse, time, sys, os
+import requests, argparse, time, sys
 from time import sleep
 
 def usage():
-	parser = argparse.ArgumentParser(description="Book Extracting Tool.")
+	parser = argparse.ArgumentParser()
 	parser.add_argument("extension", choices=['pdf','epub','docx'],
 	    help="Extension type")
 	parser.add_argument("-q", "--quiet", action="store_true",
@@ -32,7 +32,6 @@ def main():
 	print("It has been done successfully.")
 
 def banner():
-	os.system('clear')
 	print("""       _______
       /      /,
      /      //   Book Extracting
