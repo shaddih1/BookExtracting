@@ -26,6 +26,7 @@ Extract some books with BookExtracting
       -h, --help            show this help message and exit
       -q, --quiet           Suppress warnings and chit-chat
       -u URL, --url URL     Set URL to extract
+      -p PATH, --path PATH  Set the document path
       -f NAME, --file_name NAME
                             Set file name
  Example usage:
