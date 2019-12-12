@@ -21,14 +21,14 @@ def usage():
 
 def main():
 	args = usage()
-	if args.quiet:
-		pass
-	else:
-		banner()
 	if args.path:
 		path = str(args.path)
 	else:
 		path = os.getcwd()
+	if args.quiet:
+		pass
+	else:
+		banner()
 	url = args.url
 	file_name = args.file_name
 	extension = args.extension
