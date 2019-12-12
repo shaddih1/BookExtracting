@@ -20,15 +20,18 @@ Extract some books with BookExtracting
     usage: book.py [-h] [-q] [-u URL] [-f NAME] {pdf,epub,docx}
         
     positional arguments:
-      {pdf,epub,docx}       Extension type
+      {pdf,epub,docx}       extension type
             
     optional arguments:
       -h, --help            show this help message and exit
-      -q, --quiet           Suppress warnings and chit-chat
-      -u URL, --url URL     Set URL to extract
+      -q, --quiet           suppresses printer model determination
+      -u URL, --url URL     set URL to extract
+      -p PATH, --path PATH  set the document path
       -f NAME, --file_name NAME
-                            Set file name
-    example:
+                            set file name
+ Example usage:
+ 
       $ python3 extracting.py -u http//:url... -f file_name pdf
       $ python3 extracting.py -q -u http://url... -f file_name epub
-      $ python3 extracting.py
+      $ python3 extracting.py -u htt//url... -p /user/name/... -f file_name pdf
+      $ python3 extracting.py 
