@@ -4,7 +4,7 @@
 ![language](https://img.shields.io/badge/language-python3%2B-green.svg)
 
 ## Description
-Extract EPUBs, DOCXs, PDFs
+Extract some books with BookExtracting
 ## Banner
 
         _______
