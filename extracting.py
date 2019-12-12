@@ -37,7 +37,7 @@ def main():
 		open(path + "/{}.{}".format(file_name, extension), "wb").write(file.content)
 		print("It has been done successfully.")
 	except FileNotFoundError:
-		print("Error: " + path)
+		print("Error: Set a correct path for the file")
 		sys.exit(0)
 
 def banner():
