@@ -10,7 +10,7 @@ def usage():
 	parser.add_argument("extension", choices=['pdf','epub','docx'],
 	    help="extension type")
 	parser.add_argument("-q", "--quiet", action="store_true",
-	    help="suppresses printer model determination")
+	    help="suppresses banner")
 	parser.add_argument("-u", "--url", metavar="URL", help="set URL to extract")
 	parser.add_argument("-p", "--path", metavar="PATH", help="set the document path")
 	parser.add_argument("-f", "--file_name", metavar="FILE_NAME", help="set file name")
