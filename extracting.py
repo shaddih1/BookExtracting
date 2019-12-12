@@ -38,7 +38,7 @@ def main():
 		print("It has been done successfully.")
 	except FileNotFoundError:
 		print("Error: Set a correct path for the file")
-		sys.exit(0)
+		pass
 
 def banner():
 	print("""       _______
