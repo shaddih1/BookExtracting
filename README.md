@@ -30,5 +30,5 @@ Extract EPUBs, DOCXs, PDFs
                             Set file name
     example:
       $ python3 extracting.py -u http//:url... -f file_name pdf
-      $ python3 extracting.py -q -u http://url... -f file_name docx
+      $ python3 extracting.py -q -u http://url... -f file_name epub
       $ python3 extracting.py
