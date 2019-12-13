@@ -35,18 +35,17 @@ def main():
 	file = requests.get(url)
 	try:
 		open(path + "/{}.{}".format(file_name, extension), "wb").write(file.content)
-		print("It has been done successfully.")
+		print("==> It has done successfully")
 	except FileNotFoundError:
 		print("Error: Set a correct path for the file")
 
 def banner():
-	print("""       _______
-      /      /,
-     /      //   Book Extracting
-    /______//
-   (______(/  V 0.1R   PDF
-
-   # Coded By Shady H & Guy U
+	print(""" _____         _   _____     _           _       _
+| __  |___ ___| |_|   __|_ _| |_ ___ ___| |_ ___|_|___ ___
+| __ -| . | . | '_|   __|_'_|  _|  _| .'|  _|  _| |   | . |
+|_____|___|___|_,_|_____|_,_|_| |_| |__,|_| |___|_|_|_|_  |
+                                                      |___| v0.2
+				# Coded by Shady H & Guy U
 """)
 
 if __name__ == "__main__":
