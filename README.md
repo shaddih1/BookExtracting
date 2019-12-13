@@ -14,6 +14,7 @@ Extract some books with BookExtracting
                                                           |___|
         BookExtracting | v0.2 | Coded by Shady H & Guy U
               Designed to automate book extraction
+              
 
    
 ## Usage
