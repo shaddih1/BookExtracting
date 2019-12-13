@@ -7,7 +7,6 @@
 ## Description
 Designed to automate book extraction | Coded by Shady H & Guy U
 ## Banner
-
      _____         _   _____     _               _   _
     | __  |___ ___| |_|   __|_ _| |_ ___ ___ ___| |_|_|___ ___
     | __ -| . | . | '_|   __|_'_|  _|  _| .'|  _|  _| |   | . | 
