@@ -4,7 +4,7 @@
 ![language](https://img.shields.io/badge/language-python3%2B-green.svg)
 
 ## Description
-Extract some books with BookExtracting
+Designed to automate book extraction
 ## Banner
 
      _____         _   _____     _               _   _
