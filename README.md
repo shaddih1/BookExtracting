@@ -5,7 +5,7 @@
 [![GitHub license](https://img.shields.io/github/license/shaddih1/BookExtracting.svg)](https://github.com/shaddih1/BookExtracting/blob/master/LICENSE)
 
 ## Description
-Designed to automate book extraction | Coded by Shady H & Guy U
+Coded by Shady H & Guy U | Designed to automate book extraction
 ## Banner
      _____         _   _____     _               _   _
     | __  |___ ___| |_|   __|_ _| |_ ___ ___ ___| |_|_|___ ___
