@@ -40,13 +40,14 @@ def main():
 		print("Error: Set a correct path for the file")
 
 def banner():
-	print(""" _____         _   _____     _           _       _
-| __  |___ ___| |_|   __|_ _| |_ ___ ___| |_ ___|_|___ ___
+	print(""" _____         _   _____     _               _   _
+| __  |___ ___| |_|   __|_ _| |_ ___ ___ ___| |_|_|___ ___
 | __ -| . | . | '_|   __|_'_|  _|  _| .'|  _|  _| |   | . |
-|_____|___|___|_,_|_____|_,_|_| |_| |__,|_| |___|_|_|_|_  |
-                                                      |___| v0.2
-			   # Coded by Shady H & Guy U
-""")
+|_____|___|___|_,_|_____|_,_|_| |_| |__,|___|_| |_|_|_|_  |
+                                                      |___|
+    BookExtracting | v0.2 | Coded by Shady H & Guy U
+          Designed to automate book extraction
+          """)
 
 if __name__ == "__main__":
 	try:
