@@ -7,14 +7,14 @@
 Extract some books with BookExtracting
 ## Banner
 
-        _______
-       /      /,    
-      /      //   Book Extracting
-     /______//          
-    (______(/  V 0.1R   EPUB | DOCX
-                            PDF
-     
-     # Coded By Shady H & Guy U
+     _____         _   _____     _               _   _
+    | __  |___ ___| |_|   __|_ _| |_ ___ ___ ___| |_|_|___ ___
+    | __ -| . | . | '_|   __|_'_|  _|  _| .'|  _|  _| |   | . | 
+    |_____|___|___|_,_|_____|_,_|_| |_| |__,|___|_| |_|_|_|_  |
+                                                          |___|
+        BookExtracting | v0.2 | Coded by Shady H & Guy U
+              Designed to automate book extraction
+
    
 ## Usage
     usage: book.py [-h] [-q] [-u URL] [-f NAME] {pdf,epub,docx}
