@@ -2,7 +2,7 @@
 
 ![version](https://img.shields.io/badge/version-0.1-yellow.svg)
 ![language](https://img.shields.io/badge/language-python3%2B-green.svg)
-![license](https://img.shields.io/badge/version-0.1-yellow.svg)
+[![GitHub license](https://img.shields.io/github/license/shaddih1/BookExtracting.svg)](https://github.com/shaddih1/BookExtracting/blob/master/LICENSE)
 
 ## Description
 Designed to automate book extraction
