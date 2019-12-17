@@ -2,39 +2,34 @@
 # -*- coding: utf-8 -*-
 
 # standard library
-import requests, argparse, time, sys, os
+import requests, argparse, time, scan, sys, os
 from time import sleep
 
 def usage():
 	parser = argparse.ArgumentParser()
-	parser.add_argument("extension", choices=['pdf','epub','docx'],
-	    help="extension type")
+	parser.add_argument("-u", "--url", metavar="URL", help="set URL to extract")
 	parser.add_argument("-q", "--quiet", action="store_true",
 	    help="suppresses banner")
-	parser.add_argument("-u", "--url", metavar="URL", help="set URL to extract")
 	parser.add_argument("-p", "--path", metavar="PATH", help="set the document path")
-	parser.add_argument("-f", "--file_name", metavar="FILE_NAME", help="set file name")
 	if len(sys.argv) < 2:
 		print("Comming Soon v0.2")
-		sys.exit(0)
 	return parser.parse_args()
 
 def main():
+	global url, linkList
 	args = usage()
+	url = args.url
+	for list in scan.getLinks(url):
+		if website_name in list:
+			linkList = list
+	file = requests.get(url)
 	if args.path:
-		path = str(args.path)
+		path = args.path
 	else:
 		path = os.getcwd()
-	if args.quiet:
-		pass
-	else:
-		banner()
-	url = args.url
-	file_name = args.file_name
-	extension = args.extension
-	file = requests.get(url)
 	try:
 		open(path + "/{}.{}".format(file_name, extension), "wb").write(file.content)
+
 		print("==> It has done successfully")
 	except FileNotFoundError:
 		print("Error: Set a correct path for the file")
