@@ -35,7 +35,6 @@ def linkList():
 		print("Error [i] etc...")
 		sys.exit()
 
-
 def main():
 	global url
 	args = usage()
