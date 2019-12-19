@@ -19,6 +19,7 @@ def linkList():
 	global links, epub_links, pdf_links
 	try:
 		epub_links = []
+		pdf_links = []
 		links = scan.getLinks(url)
 		for i in links:
 			if ".epub" in i:
@@ -28,6 +29,8 @@ def linkList():
 		print("A total of {} links were found at {}".format(len(links), url))
 		if epub_links != []:
 			print(" >>> {} epub links found at {}".format(len(epub_links), url))
+		elif pdf_links != []:
+			print(" >>> {} pdf links found at {}".format(len(pdf_links), url))
 	except UnicodeDecodeError:
 		print("Error [i] etc...")
 		sys.exit()
