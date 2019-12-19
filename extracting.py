@@ -16,7 +16,7 @@ def usage():
 	return parser.parse_args()
 
 def interactive():
-	# display heading (banner)
+	# display heading - (banner)
 	heading()
 	print("Comming soon")
 
