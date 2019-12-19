@@ -36,14 +36,12 @@ def linkList():
 def main():
 	global url
 	args = usage()
+	if not args.quiet:
+		heading()
 	url = args.url
-	if args.quiet:
-		pass
-	else:
-		banner()
 	linkList()
 
-def banner():
+def heading():
 	print(""" _____         _   _____     _               _   _
 | __  |___ ___| |_|   __|_ _| |_ ___ ___ ___| |_|_|___ ___
 | __ -| . | . | '_|   __|_'_|  _|  _| .'|  _|  _| |   | . |
