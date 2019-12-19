@@ -15,24 +15,33 @@ def usage():
 		print("Comming Soon v0.2")
 	return parser.parse_args()
 
+def linkList():
+	global links, epub_links, pdf_links
+	try:
+		epub_links = []
+		links = scan.getLinks(url)
+		for i in links:
+			if ".epub" in i:
+				epub_links.append(i)
+			elif ".pdf" in i:
+				pdf_links.append(i)
+		print("A total of {} links were found at {}".format(len(links), url))
+		if epub_links != []:
+			print(" >>> {} epub links found at {}".format(len(epub_links), url))
+	except UnicodeDecodeError:
+		print("Error [i] etc...")
+		sys.exit()
+
+
 def main():
-	global url, linkList
+	global url
 	args = usage()
 	url = args.url
-	for list in scan.getLinks(url):
-		if website_name in list:
-			linkList = list
-	file = requests.get(url)
-	if args.path:
-		path = args.path
+	if args.quiet:
+		pass
 	else:
-		path = os.getcwd()
-	try:
-		open(path + "/{}.{}".format(file_name, extension), "wb").write(file.content)
-
-		print("==> It has done successfully")
-	except FileNotFoundError:
-		print("Error: Set a correct path for the file")
+		banner()
+	linkList()
 
 def banner():
 	print(""" _____         _   _____     _               _   _
