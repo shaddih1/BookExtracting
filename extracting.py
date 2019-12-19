@@ -12,24 +12,33 @@ def usage():
 	    help="suppresses banner")
 	parser.add_argument("-p", "--path", metavar="PATH", help="set the document path")
 	if len(sys.argv) < 2:
-		print("Comming Soon v0.2")
+		interactive()
 	return parser.parse_args()
 
-def linkList():
+def interactive():
+	# display heading (banner)
+	heading()
+	print("Comming soon")
+
+def linkLists():
 	global links, epub_links, pdf_links
 	try:
 		epub_links = []
 		pdf_links = []
+		# call getLinks function from scan.py
 		links = scan.getLinks(url)
 		for i in links:
 			if ".epub" in i:
 				epub_links.append(i)
 			elif ".pdf" in i:
 				pdf_links.append(i)
+		# python3.6+ print(f"A total of {len(links)} links were found at {url}")
 		print("A total of {} links were found at {}".format(len(links), url))
 		if epub_links != []:
+			# python3.6+ print(f" >>> {len(epub_links)} epub links found at {url}")
 			print(" >>> {} epub links found at {}".format(len(epub_links), url))
 		elif pdf_links != []:
+			# python3.6+ print(f" >>> {len(pdf_links)} pdf links found at {url}")
 			print(" >>> {} pdf links found at {}".format(len(pdf_links), url))
 	except UnicodeDecodeError:
 		print("Error [i] etc...")
@@ -41,7 +50,8 @@ def main():
 	if not args.quiet:
 		heading()
 	url = args.url
-	linkList()
+	linkLists()
+
 
 def heading():
 	print(""" _____         _   _____     _               _   _
