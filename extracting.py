@@ -15,34 +15,42 @@ def usage():
 		interactive()
 	return parser.parse_args()
 
+def shutdown():
+	print("Some")
+	os._exit(1)
+
 def interactive():
 	# display heading - (banner)
 	heading()
 	print("Comming soon")
 
 def linkLists():
-	global links, epub_links, pdf_links
+	global links, epub_links, pdf_links, zip_links
+	epub_links = []
+	pdf_links = []
+	zip_links = []
 	try:
-		epub_links = []
-		pdf_links = []
 		# call getLinks function from scan.py
 		links = scan.getLinks(url)
+		print("\nExtracting...")
 		for i in links:
 			if ".epub" in i:
 				epub_links.append(i)
 			elif ".pdf" in i:
 				pdf_links.append(i)
-		# python3.6+ print(f"A total of {len(links)} links were found at {url}")
-		print("A total of {} links were found at {}".format(len(links), url))
-		if epub_links != []:
-			# python3.6+ print(f" >>> {len(epub_links)} epub links found at {url}")
-			print(" >>> {} epub links found at {}".format(len(epub_links), url))
-		elif pdf_links != []:
-			# python3.6+ print(f" >>> {len(pdf_links)} pdf links found at {url}")
-			print(" >>> {} pdf links found at {}".format(len(pdf_links), url))
+			elif ".zip" in i:
+				zip_links.append(i)
 	except UnicodeDecodeError:
-		print("Error [i] etc...")
-		sys.exit()
+		shutdown()
+
+def heading():
+	print("""\n_____         _   _____     _               _   _
+| __  |___ ___| |_|   __|_ _| |_ ___ ___ ___| |_|_|___ ___
+| __ -| . | . | '_|   __|_'_|  _|  _| .'|  _|  _| |   | . |
+|_____|___|___|_,_|_____|_,_|_| |_| |__,|___|_| |_|_|_|_  |
+                                                      |___|
+    BookExtracting | v0.2 | Coded by Shady H & Guy U
+          Designed to automate book extraction""")
 
 def main():
 	global url
@@ -50,21 +58,13 @@ def main():
 	if not args.quiet:
 		heading()
 	url = args.url
-	linkLists()
-
-
-def heading():
-	print(""" _____         _   _____     _               _   _
-| __  |___ ___| |_|   __|_ _| |_ ___ ___ ___| |_|_|___ ___
-| __ -| . | . | '_|   __|_'_|  _|  _| .'|  _|  _| |   | . |
-|_____|___|___|_,_|_____|_,_|_| |_| |__,|___|_| |_|_|_|_  |
-                                                      |___|
-    BookExtracting | v0.2 | Coded by Shady H & Guy U
-          Designed to automate book extraction
-          """)
+	try:
+		linkLists()
+	except ValueError:
+		shutdown()
 
 if __name__ == "__main__":
 	try:
 		main()
 	except KeyboardInterrupt:
-		sys.exit(0)
+		os._exit(0)
