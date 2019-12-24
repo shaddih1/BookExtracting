@@ -14,7 +14,8 @@
               Designed to automate book extraction
 
 ## About 
-Designed to automate book extraction\n
+Designed to automate book extraction
+
 Coded by Shady H & Guy U
 
 ## How to install
