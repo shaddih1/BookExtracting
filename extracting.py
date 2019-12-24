@@ -65,13 +65,17 @@ def heading():
           Designed to automate book extraction""")
 
 def main():
-	global url
+	global url, path
 	args = usage()
 	if not args.quiet:
 		heading()
+	if args.path:
+		path = args.path
+	else:
+		path = os.getcwd()
 	url = args.url
 	try:
-		linkLists()
+		extraction()
 	except ValueError:
 		shutdown()
 
