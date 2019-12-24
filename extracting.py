@@ -15,6 +15,13 @@ def usage():
 		interactive()
 	return parser.parse_args()
 
+def checkConnection():
+    try:
+        urlopen("https://www.google.com/", timeout=3)
+        return True
+    except URLError:
+        return False
+
 def shutdown():
 	print("Some")
 	os._exit(1)
@@ -31,7 +38,7 @@ def extraction():
 		if len(http_links) != 0:
 			for l, i in enumerate(http_links):
 				req = requests.get(i)
-				with open(path + "/books/{}.pdf".format(l), "wb") as file:
+				with open(path + "{}.pdf".format(l), "wb") as file:
 					file.write(req.content)
 				print("It was done")
 	except FileNotFoundError:
@@ -67,17 +74,21 @@ def heading():
 def main():
 	global url, path
 	args = usage()
-	url = args.url
-	if not args.quiet:
-		heading()
-	if args.path:
-		path = args.path
+	if checkConnection():
+		url = args.url
+	    if args.path:
+			path = args.path
+		else:
+			path = os.getcwd()
+	    if not args.quiet:
+			heading()
+		try:
+			extraction()
+		except ValueError:
+			shutdown()
 	else:
-		path = os.getcwd()
-	try:
-		extraction()
-	except ValueError:
-		shutdown()
+		print("[Error] - Please check your internet connection.")
+		os._exit(1)
 
 if __name__ == "__main__":
 	try:
