@@ -14,7 +14,8 @@
               Designed to automate book extraction
 
 ## About 
-Coded by Shady H & Guy U | Designed to automate book extraction
+Designed to automate book extraction
+Coded by Shady H & Guy U
 
 ## How to install
 Open the terminal and type following commands.
@@ -33,5 +34,5 @@ Open the terminal and type following commands.
  
       $ python3 extracting.py -u http//:url... 
       $ python3 extracting.py -q -u http://url... 
-      $ python3 extracting.py -q -u htt//url... -p /user/name/...
+      $ python3 extracting.py -q -u http//url... -p /user/name/...
       $ python3 extracting.py 
