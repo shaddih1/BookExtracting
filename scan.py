@@ -4,12 +4,12 @@
 import html5lib, urllib, re
 from bs4 import BeautifulSoup
 
-def getLinks(url,):
+def webScan(url,):
     returnlist = []
     html_page = urllib.request.urlopen(url).read().decode('utf-8')
     soup = BeautifulSoup(html_page, "html5lib")
 
-    for l in soup.findAll('a', attrs={'href': re.compile("^http://")}):
+    for l in soup.findAll('a', attrs={'href': re.compile("")}):
         returnlist.append(l.get('href'))
 
     return returnlist

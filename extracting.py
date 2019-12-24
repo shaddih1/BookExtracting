@@ -24,22 +24,21 @@ def interactive():
 	heading()
 	print("Comming soon")
 
-def linkLists():
-	global links, epub_links, pdf_links, zip_links
-	epub_links = []
-	pdf_links = []
-	zip_links = []
+def getLinks():
+	global non_http_links, http_links
 	try:
-		# call getLinks function from scan.py
-		links = scan.getLinks(url)
-		print("\nExtracting...")
-		for i in links:
-			if ".epub" in i:
-				epub_links.append(i)
-			elif ".pdf" in i:
-				pdf_links.append(i)
-			elif ".zip" in i:
-				zip_links.append(i)
+		# call webScan function from scan.py
+		links = scan.webScan(url)
+		# links list classification
+		if len(links) != 0:
+			non_http_links = links
+			http_links = []
+			for i in links:
+				if "http://" in i or "https://" in i:
+					http_links.append(i)
+			if len(http_links) != 0:
+				for i in http_links:
+					non_http_links.remove(i)
 	except UnicodeDecodeError:
 		shutdown()
 
