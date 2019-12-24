@@ -24,6 +24,18 @@ def interactive():
 	heading()
 	print("Comming soon")
 
+def extraction():
+	# links
+	getLinks()
+	if len(http_links) != 0:
+		try:
+			for l, i in enumerate(http_links):
+				req = requests.get(i)
+				with open(path + "/books/{}.pdf".format(l), "wb") as file:
+					file.write(req.content)
+				print("It was done")
+		except FileNotFoundError:
+			shutdown()
 def getLinks():
 	global non_http_links, http_links
 	try:
