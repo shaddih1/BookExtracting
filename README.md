@@ -4,9 +4,7 @@
 ![language](https://img.shields.io/badge/language-python3%2B-green.svg)
 [![GitHub license](https://img.shields.io/github/license/shaddih1/BookExtracting.svg)](https://github.com/shaddih1/BookExtracting/blob/master/LICENSE)
 
-## Description
-Coded by Shady H & Guy U | Designed to automate book extraction
-## Banner
+## Heading
      _____         _   _____     _               _   _
     | __  |___ ___| |_|   __|_ _| |_ ___ ___ ___| |_|_|___ ___
     | __ -| . | . | '_|   __|_'_|  _|  _| .'|  _|  _| |   | . | 
@@ -14,25 +12,26 @@ Coded by Shady H & Guy U | Designed to automate book extraction
                                                           |___|
         BookExtracting | v0.2 | Coded by Shady H & Guy U
               Designed to automate book extraction
-              
+
+## About 
+Coded by Shady H & Guy U | Designed to automate book extraction
+
+## How to install
+Open the terminal and type following commands.
 
    
 ## Usage
-    usage: book.py [-h] [-q] [-u URL] [-f NAME] {pdf,epub,docx}
-        
-    positional arguments:
-      {pdf,epub,docx}       extension type
-            
-    optional arguments:
-      -h, --help            show this help message and exit
-      -q, --quiet           suppresses printer model determination
-      -u URL, --url URL     set URL to extract
-      -p PATH, --path PATH  set the document path
-      -f NAME, --file_name NAME
-                            set file name
+     usage: extracting.py [-h] [-u URL] [-q] [-p PATH]
+     
+     optional arguments:
+       -h, --help            show this help message and exit
+       -u URL, --url URL     set URL to extract
+       -q, --quiet           suppresses banner
+       -p PATH, --path PATH  set the document path
+      
  Example usage:
  
-      $ python3 extracting.py -u http//:url... -f file_name pdf
-      $ python3 extracting.py -q -u http://url... -f file_name epub
-      $ python3 extracting.py -u htt//url... -p /user/name/... -f file_name pdf
+      $ python3 extracting.py -u http//:url... 
+      $ python3 extracting.py -q -u http://url... 
+      $ python3 extracting.py -q -u htt//url... -p /user/name/...
       $ python3 extracting.py 
