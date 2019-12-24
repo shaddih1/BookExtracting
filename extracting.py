@@ -36,6 +36,7 @@ def extraction():
 				print("It was done")
 		except FileNotFoundError:
 			shutdown()
+
 def getLinks():
 	global non_http_links, http_links
 	try:
