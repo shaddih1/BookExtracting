@@ -25,16 +25,16 @@ def interactive():
 	print("Comming soon")
 
 def extraction():
-	# links
+	# call getLinks function
 	getLinks()
-	if len(http_links) != 0:
-		try:
+	try:
+		if len(http_links) != 0:
 			for l, i in enumerate(http_links):
 				req = requests.get(i)
 				with open(path + "/books/{}.pdf".format(l), "wb") as file:
 					file.write(req.content)
 				print("It was done")
-		except FileNotFoundError:
+	except FileNotFoundError:
 			shutdown()
 
 def getLinks():
@@ -67,13 +67,13 @@ def heading():
 def main():
 	global url, path
 	args = usage()
+	url = args.url
 	if not args.quiet:
 		heading()
 	if args.path:
 		path = args.path
 	else:
 		path = os.getcwd()
-	url = args.url
 	try:
 		extraction()
 	except ValueError:
