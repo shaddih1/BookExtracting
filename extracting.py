@@ -16,11 +16,13 @@ def usage():
 	return parser.parse_args()
 
 def checkConnection():
-    try:
-        urlopen("https://www.google.com/", timeout=3)
-        return True
-    except URLError:
-        return False
+	try:
+		# check internet connection with the requests module
+		req = requests.get("https://google.com", timeout=4)
+		return True
+	except requests.ConnectionError:
+		print("[Error] - Please check your internet connection.")
+	return False
 
 def shutdown():
 	print("Some")
@@ -87,7 +89,6 @@ def main():
 		except ValueError:
 			shutdown()
 	else:
-		print("[Error] - Please check your internet connection.")
 		os._exit(1)
 
 if __name__ == "__main__":
