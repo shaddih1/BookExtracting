@@ -1,7 +1,7 @@
 # BookExtracting
 
 ![version](https://img.shields.io/badge/version-0.2-red.svg)
-![language](https://img.shields.io/badge/language-python3%2B-green.svg)
+![language](https://img.shields.io/badge/language-python%2B-green.svg)
 [![GitHub license](https://img.shields.io/github/license/shaddih1/BookExtracting.svg)](https://github.com/shaddih1/BookExtracting/blob/master/LICENSE)
 
 ## Heading
