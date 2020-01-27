@@ -70,7 +70,7 @@ def heading():
 | __ -| . | . | '_|   __|_'_|  _|  _| .'|  _|  _| |   | . |
 |_____|___|___|_,_|_____|_,_|_| |_| |__,|___|_| |_|_|_|_  |
                                                       |___|
-    BookExtracting | v0.2 | Coded by Shady H & Guy U
+    BookExtracting | v0.2 | Coded by Shady H & Ulrich
           Designed to automate book extraction""")
 
 def main():
