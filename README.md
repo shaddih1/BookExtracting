@@ -16,7 +16,7 @@
 ## About 
 Designed to automate book extraction
 
-Coded by Shady H & Guy U
+Coded with <3 by Shady H & Ulrich
 
 ## How to install
 Open the terminal and type following commands.
