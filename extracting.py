@@ -78,11 +78,11 @@ def main():
 	args = usage()
 	if checkConnection():
 		url = args.url
-	    if args.path:
+		if args.path:
 			path = args.path
 		else:
 			path = os.getcwd()
-	    if not args.quiet:
+		if not args.quiet:
 			heading()
 		try:
 			extraction()
