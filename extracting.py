@@ -25,8 +25,8 @@ def checkConnection():
 	return False
 
 def shutdown():
-	print("Some")
-	os._exit(1)
+	print("[i] - Thanks for using BookExtracting")
+	os._exit(0)
 
 def interactive():
 	# display heading - (banner)
@@ -34,17 +34,24 @@ def interactive():
 	print("Comming soon")
 
 def extraction():
+	global non_http_links
 	# call getLinks function
 	getLinks()
-	try:
-		if len(http_links) != 0:
-			for l, i in enumerate(http_links):
-				req = requests.get(i)
-				with open(path + "{}.pdf".format(l), "wb") as file:
-					file.write(req.content)
-				print("It was done")
-	except FileNotFoundError:
-			shutdown()
+	if len(http_links) != 0:
+		for l, i in enumerate(http_links):
+			req = requests.get(i)
+			with open(path + "{}.pdf".format(l), "wb") as file:
+				file.write(req.content)
+			print("[*] - It has been downloaded")
+	elif len(non_http_links) != 0:
+		if non_http_links[0] == '../':
+			non_http_links = non_http_links[1:]
+		for l, i in enumerate(non_http_links):
+			print(i)
+			req = requests.get(url + i)
+			with open(path + "{}.rar".format(l), "wb") as file:
+				file.write(req.content)
+			print("[*] - It has been downloaded")
 
 def getLinks():
 	global non_http_links, http_links
@@ -84,10 +91,7 @@ def main():
 			path = os.getcwd()
 		if not args.quiet:
 			heading()
-		try:
-			extraction()
-		except ValueError:
-			shutdown()
+		extraction()
 	else:
 		os._exit(1)
 
