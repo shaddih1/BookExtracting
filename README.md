@@ -14,14 +14,16 @@
               Designed to automate book extraction
 
 ## About 
-Designed to automate book extraction
+Designed to automate book extraction, unfinished 
+- Interactive menu
+- Random Book mode it's now realised 
 
-Coded with <3 by Shady H & Ulrich
+Coded with <3 for you, by Shady H & Ulrich
 
 ## How to install
 Open the terminal and type following commands.
 
-   
+
 ## Usage
      usage: extracting.py [-h] [-u URL] [-q] [-p PATH]
      
