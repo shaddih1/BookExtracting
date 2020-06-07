@@ -11,7 +11,7 @@ def usage():
 	parser.add_argument("-q", "--quiet", action="store_true",
 	    help="suppresses banner")
 	parser.add_argument("-p", "--path", metavar="PATH", help="set the document path")
-	parser.add_argument("-r", "--random, actiom="store_true",
+	parser.add_argument("-r", "--random", action="store_true",
 		help="download a random book of feedbook")
 	if len(sys.argv) < 2:
 		interactive()
