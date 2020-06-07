@@ -11,6 +11,8 @@ def usage():
 	parser.add_argument("-q", "--quiet", action="store_true",
 	    help="suppresses banner")
 	parser.add_argument("-p", "--path", metavar="PATH", help="set the document path")
+	parser.add_argument("-r", "--random, actiom="store_true",
+		help="download a random book of feedbook")
 	if len(sys.argv) < 2:
 		interactive()
 	return parser.parse_args()
@@ -29,9 +31,28 @@ def shutdown():
 	os._exit(0)
 
 def interactive():
+	menu = {
+		"1" : extraction(),
+		"2" : randomBook()
+	}
 	# display heading - (banner)
 	heading()
-	print("Comming soon")
+	exit = False
+	while not exit:
+		for number, functions in menu.iteritems():
+			message = "{} ~ {}".format(option, functions.__doc__)
+			print(message)
+		option = input("Choose option: ").lower()
+		exit == option == "exit"
+
+		function = menu.get(option)
+		if function:
+			function()
+	else:
+		shutdown()
+
+def randomBook():
+	
 
 def extraction():
 	global non_http_links
@@ -49,7 +70,7 @@ def extraction():
 		for l, i in enumerate(non_http_links):
 			print(i)
 			req = requests.get(url + i)
-			with open(path + "{}.rar".format(l), "wb") as file:
+			with open(path + "{}.pdf".format(l), "wb") as file:
 				file.write(req.content)
 			print("[*] - It has been downloaded")
 
@@ -76,9 +97,9 @@ def heading():
 | __  |___ ___| |_|   __|_ _| |_ ___ ___ ___| |_|_|___ ___
 | __ -| . | . | '_|   __|_'_|  _|  _| .'|  _|  _| |   | . |
 |_____|___|___|_,_|_____|_,_|_| |_| |__,|___|_| |_|_|_|_  |
-                                                      |___|
-    BookExtracting | v0.2 | Coded by Shady H & Ulrich
-          Designed to automate book extraction""")
+                                    v0.2 unfinished   |___|
+  BookExtracting | Coded by Shady H & Ulrich | Random mode
+     {Designed to automate book extraction} Unfinished""")
 
 def main():
 	global url, path
