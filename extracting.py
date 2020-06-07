@@ -32,18 +32,19 @@ def shutdown():
 
 def interactive():
 	menu = {
-		"1" : extraction(),
-		"2" : randomBook()
+		"1" : randomBook,
+		"2" : extraction
 	}
 	# display heading - (banner)
 	heading()
 	exit = False
 	while not exit:
-		for number, functions in menu.iteritems():
-			message = "{} ~ {}".format(option, functions.__doc__)
+		for number, functions in menu.items():
+			message = "\n\t{} ~ {}".format(number, functions.__doc__)
 			print(message)
-		option = input("Choose option: ").lower()
-		exit == option == "exit"
+		print("\texit\n")
+		option = input("Choose option > ").lower()
+		exit = option == "exit"
 
 		function = menu.get(option)
 		if function:
@@ -52,20 +53,18 @@ def interactive():
 		shutdown()
 
 def randomBook():
+	"""Random Book"""
 	random_number_book = random.randint(1,7405)
 	url = "https://es.feedbooks.com/book/{}.epub".format(str(random_number_book))
 	# download
 	book = "Book{}.epub".format(str(random_number_book))
-	try:
-		req = request.get(url)
-		with open(book, "wb") as file:
-			file.write(req.content)
-		print("[*] - It has been downloaded")
-	except Exception:
-		print("[!] Error")
-		shutdown()
+	req = requests.get(url)
+	with open(book, "wb") as file:
+		file.write(req.content)
+	print("\n[*] - {} It has been downloaded\n".format(book))
 
 def extraction():
+	"""Extraction | Unfinished"""
 	global non_http_links
 	# call getLinks function
 	getLinks()
@@ -87,6 +86,7 @@ def extraction():
 
 def getLinks():
 	global non_http_links, http_links
+
 	try:
 		# call webScan function from scan.py
 		links = scan.webScan(url)
@@ -110,7 +110,7 @@ def heading():
 |_____|___|___|_,_|_____|_,_|_| |_| |__,|___|_| |_|_|_|_  |
                                     v0.2 unfinished   |___|
   BookExtracting | Coded by Shady H & Ulrich | Random mode
-     {Designed to automate book extraction} Unfinished""")
+     {Designed to automate book extraction} Unfinished\n""")
 
 def main():
 	global url, path
@@ -118,6 +118,7 @@ def main():
 	if checkConnection():
 		if args.random:
 			randomBook()
+			shutdown()
 		url = args.url
 		if args.path:
 			path = args.path
