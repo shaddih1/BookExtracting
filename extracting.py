@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # standard library
-import requests, argparse, time, scan, sys, os
+import requests, argparse, time, scan, random, sys, os
 from time import sleep
 
 def usage():
@@ -52,7 +52,18 @@ def interactive():
 		shutdown()
 
 def randomBook():
-	
+	random_number_book = random.randint(1,7405)
+	url = "https://es.feedbooks.com/book/{}.epub".format(str(random_number_book))
+	# download
+	book = "Book{}.epub".format(str(random_number_book))
+	try:
+		req = request.get(url)
+		with open(book, "wb") as file:
+			file.write(req.content)
+		print("[*] - It has been downloaded")
+	except Exception:
+		print("[!] Error")
+		shutdown()
 
 def extraction():
 	global non_http_links
@@ -105,6 +116,8 @@ def main():
 	global url, path
 	args = usage()
 	if checkConnection():
+		if args.random:
+			randomBook()
 		url = args.url
 		if args.path:
 			path = args.path
