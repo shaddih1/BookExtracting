@@ -23,7 +23,7 @@ Coded with <3 for you, by Shady H & Ulrich
 ## How to install
 Open the terminal and type following commands.
 
-- $ git clone https://github.com/shaddih1/lab.git
+- $ git clone https://github.com/shaddih1/BookExtracting.git
 - $ cd lab
 - $ pip install -r requirements.txt
 
