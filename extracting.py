@@ -40,7 +40,7 @@ def interactive():
 	exit = False
 	while not exit:
 		for number, functions in menu.items():
-			message = "\n\t{} ~ {}".format(number, functions.__doc__)
+			message = "\t{} ~ {}".format(number, functions.__doc__)
 			print(message)
 		print("\texit\n")
 		option = input("Choose option > ").lower()
