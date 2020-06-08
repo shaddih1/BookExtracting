@@ -63,7 +63,7 @@ def randomBook():
 		req = requests.get(download_url)
 		with open("{}.epub".format(book), "wb") as file:
 			file.write(req.content)
-		print("\n[+] - {} It has been downloaded\n".format(book))
+		print("\n[+] - {}.epub It has been downloaded\n".format(book))
 	except Exception:
 		print("\n[!] - Please try later")
 
