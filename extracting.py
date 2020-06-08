@@ -39,6 +39,7 @@ def interactive():
 	heading()
 	exit = False
 	while not exit:
+		print()
 		for number, functions in menu.items():
 			message = "\t{} ~ {}".format(number, functions.__doc__)
 			print(message)
