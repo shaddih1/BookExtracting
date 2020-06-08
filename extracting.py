@@ -55,13 +55,17 @@ def interactive():
 def randomBook():
 	"""Random Book"""
 	random_number_book = random.randint(1,7405)
-	url = "https://es.feedbooks.com/book/{}.epub".format(str(random_number_book))
+	url = "https://es.feedbooks.com/book/{}".format(str(random_number_book))
+	download_url = "{}.epub".format(url)
 	# download
-	book = "Book{}.epub".format(str(random_number_book))
-	req = requests.get(url)
-	with open(book, "wb") as file:
-		file.write(req.content)
-	print("\n[*] - {} It has been downloaded\n".format(book))
+	book = scan.NameScan(url)
+	try:
+		req = requests.get(download_url)
+		with open("{}.epub".format(book), "wb") as file:
+			file.write(req.content)
+		print("\n[+] - {} It has been downloaded\n".format(book))
+	except Exception:
+		print("\n[!] - Please try later")
 
 def extraction():
 	"""Extraction | Unfinished"""
@@ -73,7 +77,7 @@ def extraction():
 			req = requests.get(i)
 			with open(path + "{}.pdf".format(l), "wb") as file:
 				file.write(req.content)
-			print("[*] - It has been downloaded")
+			print("[+] - It has been downloaded")
 	elif len(non_http_links) != 0:
 		if non_http_links[0] == '../':
 			non_http_links = non_http_links[1:]
@@ -82,7 +86,7 @@ def extraction():
 			req = requests.get(url + i)
 			with open(path + "{}.pdf".format(l), "wb") as file:
 				file.write(req.content)
-			print("[*] - It has been downloaded")
+			print("[+] - It has been downloaded")
 
 def getLinks():
 	global non_http_links, http_links

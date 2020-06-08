@@ -1,2 +1,5 @@
 DateTime>=4.3
 requests>=2.23.0
+beautifulsoup4>=4.8.1
+bs4>=0.0.1
+html5lib>=1.0.1
