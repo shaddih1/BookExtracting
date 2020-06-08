@@ -15,7 +15,7 @@ def webScan(url):
     return returnlist
 
 def NameScan(url):
-    html_page = urlopen(url)
+    html_page = urllib.request.urlopen(url).read().decode('utf-8')
     bsh = BeautifulSoup(html.read(), 'html.parser')
     name = str(bsh.h1)
 
