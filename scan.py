@@ -14,9 +14,11 @@ def webScan(url):
 
     return returnlist
 
-def NameScan(url):
+def nameScan(url):
+    # This function only works in feedbook
+    # randomBook()
     html_page = urllib.request.urlopen(url).read().decode('utf-8')
     bsh = BeautifulSoup(html_page, 'html.parser')
     name = str(bsh.h1)
 
-    return name[4:-5]
+    return name[52:-5]

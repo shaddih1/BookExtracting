@@ -58,7 +58,7 @@ def randomBook():
 	url = "https://es.feedbooks.com/book/{}".format(str(random_number_book))
 	download_url = "{}.epub".format(url)
 	# download
-	book = scan.NameScan(url)
+	book = scan.nameScan(url)
 	try:
 		req = requests.get(download_url)
 		with open("{}.epub".format(book), "wb") as file:
