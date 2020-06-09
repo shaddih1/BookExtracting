@@ -18,6 +18,8 @@ Designed to automate book extraction, unfinished
 - Interactive menu
 - Random Book mode it's now realised 
 
+Tested on MacOs and Linux 
+
 Coded with <3 for you, by Shady H & Ulrich
 
 ## How to install
