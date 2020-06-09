@@ -24,7 +24,7 @@ Coded with <3 for you, by Shady H & Ulrich
 Open the terminal and type following commands.
 
 - $ git clone https://github.com/shaddih1/BookExtracting.git
-- $ cd lab
+- $ cd BookExtracting
 - $ pip install -r requirements.txt
 
 
