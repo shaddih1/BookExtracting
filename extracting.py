@@ -66,7 +66,7 @@ def randomBook():
 			file.write(req.content)
 		print("\n[+] - {}.epub It has been downloaded\n".format(book))
 	except Exception:
-		print("\n[!] - Please try later")
+		print("\n[!] - Please try later\n")
 
 def extraction():
 	"""Extraction | Unfinished"""
