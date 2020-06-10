@@ -121,6 +121,8 @@ def main():
 	global url, path
 	args = usage()
 	if checkConnection():
+		if not args.quiet:
+			heading()
 		if args.random:
 			randomBook()
 			shutdown()
@@ -129,8 +131,6 @@ def main():
 			path = args.path
 		else:
 			path = os.getcwd()
-		if not args.quiet:
-			heading()
 		extraction()
 	else:
 		os._exit(1)
