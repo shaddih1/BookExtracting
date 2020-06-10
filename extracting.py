@@ -64,7 +64,7 @@ def randomBook():
 		req = requests.get(download_url)
 		with open("{}.epub".format(book), "wb") as file:
 			file.write(req.content)
-		print("\n[+] - {}.epub It has been downloaded\n".format(book))
+		print("\n[+] - {}.epub Has been downloaded\n".format(book))
 	except:
 		print("\n[!] - Please try later\n")
 
@@ -78,7 +78,7 @@ def extraction():
 			req = requests.get(i)
 			with open(path + "{}.pdf".format(l), "wb") as file:
 				file.write(req.content)
-			print("[+] - It has been downloaded")
+			print("[+] - Has been downloaded")
 	elif len(non_http_links) != 0:
 		if non_http_links[0] == '../':
 			non_http_links = non_http_links[1:]
@@ -87,7 +87,7 @@ def extraction():
 			req = requests.get(url + i)
 			with open(path + "{}.pdf".format(l), "wb") as file:
 				file.write(req.content)
-			print("[+] - It has been downloaded")
+			print("[+] - Has been downloaded")
 
 def getLinks():
 	global non_http_links, http_links
