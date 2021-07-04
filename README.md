@@ -20,7 +20,7 @@ Designed to automate book extraction, unfinished
 
 Tested on MacOs and Linux 
 
-Coded with <3 for you, by Shady H & Ulrich
+Coded with <3 for you, by Shady H 
 
 ## How to install
 Open the terminal and type following commands.
